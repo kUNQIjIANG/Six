@@ -10,6 +10,6 @@ Content:
   
   Deep Learning:
   
-  <a href="http://en.wikipedia.org/wiki/Petersen_graph">Petersen Graph</a>
+  <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NeuralNetwork%20-MNIST">NeuralNetwork -MNIST</a>
   
 
