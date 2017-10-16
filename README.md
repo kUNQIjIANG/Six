@@ -7,6 +7,7 @@ Content:
   
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a>
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">AdaBoost</a>
+  [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb)
   
   Deep Learning:
   
