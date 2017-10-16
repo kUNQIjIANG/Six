@@ -2,7 +2,7 @@
 The way to Intelligence
 
 Content:
-  Machine lEARNING:
-  Deep lEARNING:
+  Machine Learning:
+  Deep Learning:
   
 
