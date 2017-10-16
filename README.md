@@ -5,9 +5,9 @@ Content:
 
   Machine Learning:
   
-  <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> //
-  <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">AdaBoost</a> //
-  [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb) //
+  <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
+  <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">AdaBoost</a> <br />
+  [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb) <br />
   
   Deep Learning:
   
