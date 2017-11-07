@@ -11,7 +11,10 @@ Content:
   
   Deep Learning:
   
-  <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NeuralNetwork%20-MNIST">NeuralNetwork -MNIST</a>
+  <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NeuralNetwork%20-MNIST">NeuralNetwork(scratch) </a>
+  [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py) 
+  [tf-CNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/TF_CNN.py) <br />
+
   
   Data Structure and Algorithm: 
   
