@@ -8,6 +8,8 @@ Content:
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
   [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/AdaBoost.py) <br />
   [Support-Vector-Machine](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
+  [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
+
   
   Deep Learning:
   
