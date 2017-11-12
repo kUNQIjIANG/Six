@@ -16,7 +16,8 @@ Content:
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NeuralNetwork%20-MNIST">NN(scratch) </a>
   / [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py)
   / [tf-CNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/TF_CNN.py) <br />
-
+  auto-encoder: [AE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/AE_keras.py)
+  
   
   Data Structure and Algorithm: 
   
