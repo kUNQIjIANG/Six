@@ -22,7 +22,7 @@ Content:
   
   Data Structure and Algorithm: 
   
-  [DFS and BFS](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/FS_Tree.py) <br />
+  [DFS&BFS](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/FS_Tree.py) <br />
   [Binary Tree](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/BinarySearchTree.py) <br />
   
   
