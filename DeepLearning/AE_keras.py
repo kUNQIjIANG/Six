@@ -55,7 +55,7 @@ for i in range(n):
 	# original
 	ax = plt.subplot(2, n, i+1)
 	plt.imshow(x_test[i].reshape(28,28))
-	plt.gray
+	plt.gray()
 	ax.get_xaxis().set_visible(False)
 	ax.get_yaxis().set_visible(False)
 	
