@@ -1,0 +1,15 @@
+# Practice on MySql from W3CSchool
+
+SELECT COUNT(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers);
+
+SELECT * FROM Customers where country = 'Mexico' and CustomerID BETWEEN 1 AND 58 and CustomerName LIKE '%zuma';
+
+SELECT * FROM Customers where country = 'Germany' and (City = 'Berlin' or City = 'München');
+
+SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;
+
+INSERT INTO Customers ( CustomerName, ContactName, Address, City, PostalCode, Country) 
+VALUES ( 'Kunqi', 'Jiang', 'Universe Island', 'Hangzhou', '666666', 'China'); 
+
+
+
