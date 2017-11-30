@@ -9,6 +9,7 @@ Content:
   [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/AdaBoost.py) <br />
   [Support-Vector-Machine](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
   [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
+  [Image Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
 
   
   Deep Learning:
