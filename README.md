@@ -1,17 +1,17 @@
 # siX
-### Ignite Intelligence
+## Ignite Intelligence
 
 
-  Machine Learning:
+  ### Machine Learning:
   
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
   [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/AdaBoost.py) <br />
   [Support-Vector-Machine](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
   [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
-  [Image Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
+  [Image_Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
 
   
-  Deep Learning:
+  ### Deep Learning:
   
   NN: 
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NN.py">NN </a>
@@ -23,12 +23,14 @@
                 [DeepAE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/DAE_keras.py) /
                 [ConvolutionalAE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/CAE_keras.py) /
   
-  Data Structure and Algorithm: 
+  ### Data Structure and Algorithm: 
   
-  [DFS&BFS](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/FS_Tree.py) <br />
-  [Binary Tree](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/BinarySearchTree.py) <br />
+  [DFS_BFS](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/FS_Tree.py) <br />
+  [Binary_Tree](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/BinarySearchTree.py) <br />
   
+  ### Cloud computing
   
+  [AWS_WC](https://github.com/kUNQIjIANG/siX/tree/master/CloudComputing) <br />
 
   
   
