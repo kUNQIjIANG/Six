@@ -1,4 +1,3 @@
-# siX
 ## Ignite Intelligence
 
 
