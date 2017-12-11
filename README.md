@@ -1,7 +1,6 @@
 # siX
-Ignite Intelligence
+### Ignite Intelligence
 
-Content:
 
   Machine Learning:
   
