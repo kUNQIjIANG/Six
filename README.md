@@ -18,7 +18,7 @@ Content:
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NN.py">NN </a>
   / [non_mnist](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/non_mnist.py)
   / [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py) <br />
-  RNN: [series] (https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/stock_RNN.ipynb) <br />
+  RNN: [rnn](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/stock_RNN.ipynb) <br />
   CNN: [tf-CNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_CNN.py) <br />
   auto-encoder: [AE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/AE_keras.py) /
                 [DeepAE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/DAE_keras.py) /
