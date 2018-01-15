@@ -3,6 +3,7 @@
 
   ### Machine Learning:
   
+  [logisticRegression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/activity_prediction.py) <br />
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
   [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/AdaBoost.py) <br />
   [Support-Vector-Machine](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
@@ -10,7 +11,7 @@
   [Image_Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
   [Gaussian_kernal](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Gaussian_kernal.ipynb) <br />
   [MeanFieldApproxiamte](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/mean_field.ipynb) <br />
-
+  
   
   ### Deep Learning:
   [SkipGram](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/skipGram.py) <br />
