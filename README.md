@@ -9,6 +9,7 @@
   [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
   [Image_Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
   [Gaussian_kernal](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Gaussian_kernal.ipynb) <br />
+  [MeanFieldApproxiamte](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/mean_field.ipynb) <br />
 
   
   ### Deep Learning:
