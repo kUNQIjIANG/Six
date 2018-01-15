@@ -13,7 +13,7 @@
   
   ### Deep Learning:
   [SkipGram](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/skipGram.py) <br />
-  NN: 
+ 
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NN.py">NN </a>
   / [non_mnist](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/non_mnist.py)
   / [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py) <br />
