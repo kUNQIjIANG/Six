@@ -1,0 +1,266 @@
+class CNN():
+  def __init__(self,paddings,filter_nums,filter_sizes,pool_sizes,strides, 
+               image_size, batch_size, channels, units, eta):
+    self.conv_xavier = np.sqrt(6) / np.sqrt(9+1)
+    self.conv_1 = np.random.uniform(-self.conv_xavier,self.conv_xavier,[filter_nums[0],1,filter_sizes[0],filter_sizes[0]])
+    self.conv_2 = np.random.uniform(-self.conv_xavier,self.conv_xavier,[8,8,3,3])
+    self.bias_1 = np.random.normal(0,1,[8,1])
+    self.bias_2 = np.random.normal(0,1,[8,1])
+    self.paddings = paddings
+    self.strides = strides
+    self.pool_sizes = pool_sizes
+   
+    for f_s, p_s, stride, pad in zip(filter_sizes, pool_sizes, strides, paddings):
+      image_size = ((image_size + 2*pad - f_s) / stride + 1) / p_s
+    self.final_feature_size = int(image_size)
+    self.final_channels = int(channels[-1])
+    print("image_size", image_size)
+    self.nl_xavier = np.sqrt(6) / np.sqrt(392+32)
+    self.nonlinear = np.random.uniform(-self.nl_xavier,self.nl_xavier,[int(self.final_feature_size*self.final_feature_size*self.final_channels), units[0]])
+    self.l_xavier = np.sqrt(6) / np.sqrt(32+10)
+    self.linear = np.random.uniform(-self.l_xavier,self.l_xavier,[units[0],units[1]])
+    self.eta = eta
+    self.batch_size = batch_size
+  
+  def conv_2d(self, X, conv_W, bias, padding, stride):
+    # 
+    n_x, c_x, h_x, w_x = X.shape
+    n_f, _, h_f, w_f = conv_W.shape
+    
+    out_h = (h_x + 2 * padding - h_f) / stride + 1
+    out_w = (w_x + 2 * padding - w_f) / stride + 1
+    
+    if not out_h.is_integer() or not out_w.is_integer():
+      raise Exception('Invaid output dimension in first convol')
+    
+    # X_col shape [h_f * w_f * c_x , out_h * out_w * n_x]
+    X_col = self.im2col_indices(X, h_f, w_f, padding = padding, stride = stride)
+    # W_col shape [n_f, h_f * w_f * c_x]
+    W_col = conv_W.reshape(n_f, -1)
+    bias = np.repeat(bias.reshape(-1,1), out_h * out_w * n_x, axis = 1)
+    conv_out = W_col @ X_col + bias
+    conv_out = conv_out.reshape(int(n_f), int(out_h), int(out_w), int(n_x))
+    conv_out = conv_out.transpose(3,0,1,2)
+    
+    cache = (X.shape, conv_W, stride, padding, X_col)
+    return conv_out, cache
+  
+  def conv_backward(self, h_error, cache):
+    # stuff where convol from
+    X_shape, W, stride, padding, X_col = cache
+    n_f, _, h_f, w_f = W.shape
+    d_b = np.sum(h_error, axis = (0,2,3))
+    d_b = np.reshape(n_f,-1)
+    # Transpose from 5x20x10x10 into 20x10x10x5, then reshape into 20x500
+    h_error_reshape = h_error.transpose(1,2,3,0).reshape(n_f,-1)
+    # 20x500 x 500x9 = 20x9
+    d_w = h_error_reshape @ X_col.T
+    # Reshape back to 20x1x3x3
+    d_w = d_w.reshape(W.shape)
+    # Reshape from 20x1x3x3 into 20x9
+    w_reshape = W.reshape(n_f,-1)
+    # 9x20 x 20x500 = 9x500
+    dx_col = w_reshape.T @ h_error_reshape
+    dx = self.col2im_indices(dx_col, X_shape, h_f, w_f, padding = padding, stride = stride)
+    return d_w, d_b, dx
+    
+  def maxpool_2d(self, X, pool_size, stride):
+    n_x, n_c, h_x, w_x = X.shape
+    # make sure chnnel is 1
+    X_reshaped = X.reshape(n_x * n_c, 1, h_x, w_x)
+    h_out = int(h_x / pool_size)
+    w_out = int(w_x / pool_size)
+    
+    # like doing a 2*2 convol
+    # x_pool shape [pool_size*pool_size , h_out * w_out * n_x * n_c]
+    x_pool = self.im2col_indices(X_reshaped, pool_size, pool_size, padding = 0, stride = stride)
+    max_idx = np.argmax(x_pool, axis = 0)
+    out = x_pool[max_idx, range(max_idx.size)]
+    out = out.reshape(h_out, w_out, int(n_x), int(n_c))
+    out = out.transpose(2,3,0,1)
+    return out, x_pool, max_idx
+  
+  
+  def maxpool_backward(self, x_max, X, x_pool, max_idx, stride, pool_size):
+    n_x, n_c, h_x, w_x = X.shape
+    # [4 * 14 *14 * 8 * 100 / 4]
+    dx_col = np.zeros_like(x_pool)
+    pool_flat = x_max.transpose(2,3,0,1).ravel()
+    # assign back to one of 4 row in each column
+    dx_col[max_idx, range(max_idx.size)] = pool_flat
+    # return back to the un max-pool as the d_error for 
+    # conv_backward to undate conv weights
+    dx = self.col2im_indices(dx_col, (n_x * n_c , 1, h_x, w_x), pool_size, pool_size, padding = 0, stride = stride)
+    dx = dx.reshape(X.shape)
+    return dx
+  
+  def nonlinear_layer(self,X):
+    # X : [100, 392]
+    # nonlinear : [392, 32]
+    lin_out = X @ self.nonlinear
+    return lin_out
+  
+  def linear_layer(self,X):
+    # [100,32] @ [32,10] = [100,10]
+    return X @ self.linear
+  
+  def feedforward(self,images,batch_size):
+    
+    # forward
+    
+    ori_x = images.reshape(-1,1,28,28)
+    self.h_1, self.cache_1 = self.conv_2d(ori_x, self.conv_1, self.bias_1, padding = self.paddings[0], stride = self.strides[0])
+    self.p_1, self.x_pool_1, self.max_idx_1 = self.maxpool_2d(self.h_1, self.pool_sizes[0], stride = 2)
+    self.h_2, self.cache_2 = self.conv_2d(self.p_1, self.conv_2, self.bias_2, padding = self.paddings[1], stride = self.strides[1])
+    self.p_2, self.x_pool_2, self.max_idx_2 = self.maxpool_2d(self.h_2, self.pool_sizes[1], stride = 2)
+    
+    
+    # flatten into [100, 7*7*8]
+    self.flat_x = self.p_2.reshape(batch_size, -1)
+    
+    # nonlin_x activation : [100,32]
+    self.nonlin_act_x = self.nonlinear_layer(self.flat_x)
+    
+    # relu nonlin_x 
+    self.nonlin_x = np.maximum(self.nonlin_act_x,0)
+    
+    # linear_x : [100, 10]
+    linear_x = self.linear_layer(self.nonlin_x)
+    
+    # trick for prevent numerial error: (logsumexp)
+    max_v = np.amax(linear_x, axis = 1)
+    reduce_x = linear_x - np.repeat(max_v.reshape(-1,1), 10, axis = 1).astype(float)
+    #print("reduce_x", reduce_x)
+    
+    # softmax
+    row_sum = np.sum(np.exp(reduce_x),axis = 1)
+    
+    #print("row_sum", row_sum)
+    
+    softmax_x = np.exp(reduce_x) / np.repeat(row_sum.reshape(-1,1), 10, axis = 1).astype(float)
+    
+    #print("softmax_x", softmax_x)
+    
+    
+    # predicts
+    # preds = np.argmax(softmax_x, axis = 1)
+    
+    return softmax_x
+  
+  def get_errors(self, logits,labels):
+    # error : [100, 10]
+    errors = logits - labels
+    return errors
+    
+  def backpropagate(self,errors,batch_size):
+    
+    # [32, 10] = [32, 100] @ [100, 10]
+    d_linear = self.nonlin_x.T @ errors
+    
+    # propagate errors to non linear layer
+    # [100,10] @ [10, 32]
+    nonlin_errors = errors @ self.linear.T
+    
+    # update linear weights
+    #self.linear -= (learning_rate * d_linear / float(batch_size))
+    
+    # relu gradient
+    relu_grad = np.greater(self.nonlin_act_x,0).astype(int)
+    #print("relu_grad",relu_grad)
+    
+    # non linear gradient : [100, 32]
+    nonlin_grad = nonlin_errors * relu_grad
+    
+    # [392, 32] = [392, 100] @ [100, 32]
+    d_nonlinear = self.flat_x.T @ nonlin_grad
+    
+    # propagate errors to flatten layer
+    # [100, 392] = [100, 32] @ [32, 392] 
+    flatten_errors = nonlin_errors @ self.nonlinear.T
+    
+    # update non linear weight
+    #self.nonlinear -= (learning_rate * d_nonlinear / float(batch_size))
+    
+    # reshape flatten back to cov_x 
+    # like doing a 2*2 deconvol 
+    p2_errors = flatten_errors.reshape(batch_size,self.final_channels,self.final_feature_size,self.final_feature_size)
+    
+    #print("p2_errors", p2_errors.shape)
+    
+    # h2_errors in shape [100, 8, 14, 14]
+    h2_errors = self.maxpool_backward(x_max = p2_errors, X= self.h_2, x_pool = self.x_pool_2,
+                                     max_idx = self.max_idx_2, stride = 2, pool_size = self.pool_sizes[1])
+    
+    # update conv_2, bias_2, propagate errors to p1 : [100, 8, 14, 14] 
+    #print("h2_errors", h2_errors.shape)
+    d_conv_2, d_bias_2, p1_errors = self.conv_backward(h2_errors, self.cache_2)
+    
+    #self.conv_2 -= (learning_rate * d_conv_2 / float(batch_size))
+    #self.bias_2 -= (learning_rate * d_bias_2 / float(batch_size))
+    
+    # h1_errors in shape [100, 8, 28, 28]
+    h1_errors = self.maxpool_backward(x_max = p1_errors, X = self.h_1, x_pool = self.x_pool_1,
+                                    max_idx = self.max_idx_1, stride = 2, pool_size = self.pool_sizes[0])
+    
+    # update conv_1, bias_1, propagate errors to the real image
+    d_conv_1, d_bias_1, _ = self.conv_backward(h1_errors, self.cache_1)
+    
+    self.linear -= (self.eta * d_linear / float(batch_size))
+    self.nonlinear -= (self.eta * d_nonlinear / float(batch_size))
+    self.conv_2 -= (self.eta * d_conv_2 / float(batch_size))
+    self.bias_2 -= (self.eta * d_bias_2 / float(batch_size))
+    self.conv_1 -= (self.eta * d_conv_1 / float(batch_size))
+    self.bias_1 -= (self.eta * d_bias_1 / float(batch_size))
+    
+  def get_im2col_indices(self, x_shape, field_height, field_width, padding=1, stride=1):
+    # First figure out what the size of the output should be
+    N, C, H, W = x_shape
+    assert (H + 2 * padding - field_height) % stride == 0
+    assert (W + 2 * padding - field_height) % stride == 0
+    out_height = int((H + 2 * padding - field_height) / stride + 1)
+    out_width = int((W + 2 * padding - field_width) / stride + 1)
+
+    i0 = np.repeat(np.arange(field_height), field_width)
+    i0 = np.tile(i0, C)
+    i1 = stride * np.repeat(np.arange(out_height), out_width)
+    j0 = np.tile(np.arange(field_width), field_height * C)
+    j1 = stride * np.tile(np.arange(out_width), out_height)
+    i = i0.reshape(-1, 1) + i1.reshape(1, -1)
+    j = j0.reshape(-1, 1) + j1.reshape(1, -1)
+
+    k = np.repeat(np.arange(C), field_height * field_width).reshape(-1, 1)
+
+    return (k.astype(int), i.astype(int), j.astype(int))
+  
+  def im2col_indices(self, x, field_height, field_width, padding=1, stride=1):
+    """ An implementation of im2col based on some fancy indexing """
+    # Zero-pad the input
+    p = padding
+    x_padded = np.pad(x, ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
+
+    k, i, j = self.get_im2col_indices(x.shape, field_height, field_width, padding, stride)
+
+    cols = x_padded[:, k, i, j]
+    C = x.shape[1]
+    cols = cols.transpose(1, 2, 0).reshape(field_height * field_width * C, -1)
+    return cols
+  
+  def col2im_indices(self, cols, x_shape, field_height=3, field_width=3, padding=1,
+                   stride=1):
+    """ An implementation of col2im based on fancy indexing and np.add.at """
+    N, C, H, W = x_shape
+    H_padded, W_padded = H + 2 * padding, W + 2 * padding
+    x_padded = np.zeros((N, C, H_padded, W_padded), dtype=cols.dtype)
+    k, i, j = self.get_im2col_indices(x_shape, field_height, field_width, padding, stride)
+    cols_reshaped = cols.reshape(C * field_height * field_width, -1, N)
+    cols_reshaped = cols_reshaped.transpose(2, 0, 1)
+    np.add.at(x_padded, (slice(None), k, i, j), cols_reshaped)
+    if padding == 0:
+        return x_padded
+    return x_padded[:, :, padding:-padding, padding:-padding]
+
+  
+  def eval(self,logits,labels):
+    # both in shape [100,10]
+    accu = sum(int(x==y) for x,y in zip(np.argmax(logits, axis=1), np.argmax(labels, axis=1))) / float(len(logits))
+    return accu
