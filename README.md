@@ -30,7 +30,7 @@
   
   [DFS_BFS](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/FS_Tree.py) <br />
   [Binary_Tree](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/BinarySearchTree.py) <br />
-  
+  [Binary Bound Search](https://github.com/kUNQIjIANG/siX/blob/master/Data%20structure%20and%20Algorithm/Bound_Binary_Search) 
   ### Cloud computing
   
   [AWS_WC](https://github.com/kUNQIjIANG/siX/tree/master/CloudComputing) <br />
