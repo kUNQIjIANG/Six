@@ -27,9 +27,9 @@
   [ConvolutionalAE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/CAE_keras.py) /
   
   ### Reinforcement Learning
-  [Multi-armed-Bandit](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Multi-armed-Bandit.ipynb)
-  [Q-learning](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Q-learning.ipynb)
-  [Planning](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Planning_.ipynb)
+  [Multi-armed-Bandit](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Multi-armed-Bandit.ipynb) <br />
+  [Q-learning](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Q-learning.ipynb) <br />
+  [Planning](https://github.com/kUNQIjIANG/siX/blob/master/ReinforceLearning/Planning_.ipynb) <br />
   
   ### Data Structure and Algorithm: 
   
