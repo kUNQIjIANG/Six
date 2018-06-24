@@ -2,7 +2,7 @@
 
 
   ### Machine Learning:
-  
+  [MatrixDecomposition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/NMF.ipynb)
   [Conjugate Gradient](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Conjugate_Gradient.ipynb)<br />
   [Logistic Regression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/activity_prediction.py) <br />
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
