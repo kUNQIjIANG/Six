@@ -1,4 +1,4 @@
-## Ignite Intelligence
+## Machine Learning and Reinforcement Learning
 
 
   ### Machine Learning:
