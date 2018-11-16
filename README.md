@@ -10,11 +10,11 @@
   [Logistic Regression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/activity_prediction.py) <br />
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
   [AdaBoost](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/AdaBoost.py) <br />
-  [Support-Vector-Machine](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
   [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
   [Image_Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
   [Gaussian_kernal](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Gaussian_kernel.ipynb) <br />
   [MeanFieldApproxiamte](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/mean_field.ipynb) <br />
+  [Logistic Regression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
   
   
   ### Deep Learning:
