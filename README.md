@@ -2,6 +2,7 @@
 
 
   ### Machine Learning:
+  [Latent Dirichlet Allocation](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/LDA.ipynb) <br />
   [Part-Of-Speech tagging](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/HMM_v2.ipynb) <br />
   [DecisionTree](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/DecisionTree.ipynb) <br />
   [Fast_NN](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/fast_NN.ipynb)<br />
