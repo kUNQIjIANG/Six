@@ -20,12 +20,11 @@
   
   ### Deep Learning:
   [SkipGram](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/skipGram.py) <br />
- 
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NN.py">NN(numpy) </a>
   [ConvolutionalNeuralNet(numpy)](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/CNN(numpy)) <br />
   [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py) 
   [tf-CNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_CNN.py) <br />
-  [rnn](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/stock_RNN.ipynb) <br />
+  [RNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/stock_RNN.ipynb) <br />
   [non_mnist](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/non_mnist.py)
   [AE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/AE_keras.py) /
   [DeepAE](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/DAE_keras.py) /
