@@ -4,9 +4,9 @@
   ### Machine Learning:
   [Latent Dirichlet Allocation](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/LDA.ipynb) <br />
   [Part-Of-Speech tagging](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/HMM_v2.ipynb) <br />
-  [DecisionTree](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/DecisionTree.ipynb) <br />
-  [Fast_NN](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/fast_NN.ipynb)<br />
-  [MatrixDecomposition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/NMF.ipynb)<br />
+  [Decision Tree](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/DecisionTree.ipynb) <br />
+  [Fast_Nearest Neighbor](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/fast_NN.ipynb)<br />
+  [Matrix Decomposition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/NMF.ipynb)<br />
   [Conjugate Gradient](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Conjugate_Gradient.ipynb)<br />
   [Logistic Regression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/activity_prediction.py) <br />
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/k-NN.ipynb">k-NN</a> <br />
@@ -14,14 +14,14 @@
   [Viterbi(HMM)](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Viterbi_Algorithm.ipynb) <br />
   [Image_Recognition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/apple_Recognition.ipynb) <br />
   [Gaussian_kernal](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Gaussian_kernel.ipynb) <br />
-  [MeanFieldApproxiamte](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/mean_field.ipynb) <br />
+  [Mean Field Approxiamte](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/mean_field.ipynb) <br />
   [Logistic Regression](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/SVM.ipynb) <br />
   
   
   ### Deep Learning:
   [SkipGram](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/skipGram.py) <br />
   <a href="https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/NN.py">NN(numpy) </a>
-  [ConvolutionalNeuralNet(numpy)](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/CNN(numpy)) <br />
+  [Convolutional Neural Net(numpy)](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/CNN(numpy)) <br />
   [tf-NN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_NN.py) 
   [tf-CNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/tf_CNN.py) <br />
   [RNN](https://github.com/kUNQIjIANG/siX/blob/master/DeepLearning/stock_RNN.ipynb) <br />
