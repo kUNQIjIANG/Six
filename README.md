@@ -5,7 +5,7 @@
   [Latent Dirichlet Allocation](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/LDA.ipynb) <br />
   [Part-Of-Speech tagging](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/HMM_v2.ipynb) <br />
   [Decision Tree](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/DecisionTree.ipynb) <br />
-  [Fast_Nearest Neighbor](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/fast_NN.ipynb)<br />
+  [Fast Nearest Neighbor](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/fast_NN.ipynb)<br />
   [Collaborative Filtering](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Collaborative%20Filtering.ipynb)<br />
   [Matrix Decomposition](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/NMF.ipynb)<br />
   [Conjugate Gradient](https://github.com/kUNQIjIANG/siX/blob/master/MachineLearning/Conjugate_Gradient.ipynb)<br />
